@@ -25,9 +25,9 @@ namespace Shine.Samples.API.Controllers
         }
 
         // GET api/<controller>/5
-        public Project Get(int id)
+        public Project Get(Guid id)
         {
-            return _projectApplicationService.GetProjectById(Guid.NewGuid());
+            return _projectApplicationService.GetProjectById(id);
         }
 
         // POST api/<controller>

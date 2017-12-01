@@ -4,12 +4,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Shine.Samples.Domains.Aggregates;
 using Shine.Samples.IRepositories;
 
 namespace Shine.Samples.RepositoriesImpl.EF
 {
     public class GenericRepository<T> : IGenericRepository<T>
-        where T : BaseEntity
+        where T : AggregateRoot
     {
         protected DbContext _entities;
         protected readonly IDbSet<T> _dbset;
@@ -18,6 +19,12 @@ namespace Shine.Samples.RepositoriesImpl.EF
         {
             _entities = context;
             _dbset = context.Set<T>();
+           
+        }
+        
+        public T Get(object id)
+        {
+            return _dbset.Find(id);
         }
 
         public virtual IEnumerable<T> GetAll()

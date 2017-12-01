@@ -55,9 +55,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shine.Samples.Domains\Shine.Samples.Domains.csproj">
+      <Project>{f0461950-0def-4e45-b1ef-74c35188e908}</Project>
+      <Name>Shine.Samples.Domains</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shine.Samples.DTO\Shine.Samples.DTO.csproj">
       <Project>{9336CC26-4E70-48B8-9681-6CE37372BB42}</Project>
       <Name>Shine.Samples.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shine.Samples.IRepositories\Shine.Samples.IRepositories.csproj">
+      <Project>{683E0B27-6E5F-435C-B39E-47B0FB92F1BE}</Project>
+      <Name>Shine.Samples.IRepositories</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

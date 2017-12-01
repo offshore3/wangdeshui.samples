@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace Shine.Samples.Domains.Aggregates
 {
-
    
 
+    public class AggregateRoot
+    {
+        public  Guid Id { get; set; }
+    }
 
 }

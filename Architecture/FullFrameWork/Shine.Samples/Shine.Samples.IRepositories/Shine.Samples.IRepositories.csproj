@@ -40,12 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseEntity.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="IGenericRepository.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shine.Samples.Domains\Shine.Samples.Domains.csproj">
+      <Project>{F0461950-0DEF-4E45-B1EF-74C35188E908}</Project>
+      <Name>Shine.Samples.Domains</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

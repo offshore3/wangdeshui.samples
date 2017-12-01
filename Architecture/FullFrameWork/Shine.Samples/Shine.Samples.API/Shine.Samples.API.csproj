@@ -50,6 +50,12 @@
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -124,6 +130,10 @@
     <ProjectReference Include="..\Shine.Samples.DTO\Shine.Samples.DTO.csproj">
       <Project>{9336CC26-4E70-48B8-9681-6CE37372BB42}</Project>
       <Name>Shine.Samples.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shine.Samples.RepositoriesImpl.EF\Shine.Samples.RepositoriesImpl.EF.csproj">
+      <Project>{1F661435-729B-4247-BBEA-5BE37169498F}</Project>
+      <Name>Shine.Samples.RepositoriesImpl.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
