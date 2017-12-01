@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Shine.Samples.API.BootStrap;
 
 namespace Shine.Samples.API
 {
@@ -19,6 +20,8 @@ namespace Shine.Samples.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.DependencyResolver = CastleHelper.GetDependencyResolver();
         }
     }
 }
