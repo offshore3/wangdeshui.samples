@@ -18,7 +18,7 @@ namespace Shine.Samples.ApplicationServices
             container.Register(Component
                 .For<IProjectApplicationService>()
                 .ImplementedBy<ProjectApplicationService>()
-                .LifestylePerWebRequest());
+               .LifestyleSingleton());
         }
     }
 }
