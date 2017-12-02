@@ -11,7 +11,7 @@ namespace Shine.Samples.API.OwinHost.BootStrap.Installers
         {
             container.Register(Classes.FromThisAssembly()
                 .BasedOn<ApiController>()
-                .LifestylePerWebRequest());
+                .LifestylePerThread());
         }
     }
 }

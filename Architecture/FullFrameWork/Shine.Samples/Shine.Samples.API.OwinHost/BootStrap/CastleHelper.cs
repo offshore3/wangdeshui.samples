@@ -23,8 +23,6 @@ namespace Shine.Samples.API.OwinHost.BootStrap
 
             _initialized = true;
             Container.Install(FromAssembly.This());
-            Container.Install(FromAssembly.Containing<ApplicationServiceInstaller>());
-            Container.Install(FromAssembly.Containing<RepositoriesInstaller>());
             _resolver = new WindsorHttpDependencyResolver(Container);
 
             return _resolver;

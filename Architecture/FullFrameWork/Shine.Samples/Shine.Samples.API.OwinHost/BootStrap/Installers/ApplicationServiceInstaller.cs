@@ -10,10 +10,12 @@ namespace Shine.Samples.API.OwinHost.BootStrap.Installers
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
+
+            //TODO: can not use perwebrequest lifestyle, we need implement owin lifetime style
             container.Register(Component
                 .For<IProjectApplicationService>()
                 .ImplementedBy<ProjectApplicationService>()
-               .LifestylePerWebRequest());
+               .LifestylePerThread());
         }
     }
 }

@@ -11,13 +11,13 @@ namespace Shine.Samples.API.OwinHost.BootStrap.Installers
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<IUnitOfWork>().ImplementedBy<UnitOfWork>().LifestylePerWebRequest());
-            container.Register(Component.For<DbContext>().ImplementedBy<SampleDataContext>().LifestylePerWebRequest());
+            container.Register(Component.For<IUnitOfWork>().ImplementedBy<UnitOfWork>().LifestylePerThread());
+            container.Register(Component.For<DbContext>().ImplementedBy<SampleDataContext>().LifestylePerThread());
 
             container.Register(Component
                 .For(typeof(IGenericRepository<>))
                 .ImplementedBy(typeof(GenericRepository<>))
-                .LifestylePerWebRequest());
+                .LifestylePerThread());
         }
     }
 }

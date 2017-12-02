@@ -87,7 +87,6 @@
     <Compile Include="BootStrap\Installers\ApplicationServiceInstaller.cs" />
     <Compile Include="BootStrap\Installers\RepositoriesInstaller.cs" />
     <Compile Include="BootStrap\Installers\WebApiControllerInstaller.cs" />
-    <Compile Include="BootStrap\WebApiControllerInstaller.cs" />
     <Compile Include="BootStrap\WindsorDependencyScope.cs" />
     <Compile Include="BootStrap\WindsorHttpDependencyResolver.cs" />
     <Compile Include="Program.cs" />
