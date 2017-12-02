@@ -1,10 +1,8 @@
 using Castle.Windsor;
 using Castle.Windsor.Installer;
-using Shine.Samples.ApplicationServices;
-using Shine.Samples.API.BootStrap.Installers;
-using Shine.Samples.RepositoriesImpl.EF;
+using Shine.Samples.API.OwinHost.BootStrap.Installers;
 
-namespace Shine.Samples.API.BootStrap
+namespace Shine.Samples.API.OwinHost.BootStrap
 {
     public static class CastleHelper
     {
@@ -25,8 +23,8 @@ namespace Shine.Samples.API.BootStrap
 
             _initialized = true;
             Container.Install(FromAssembly.This());
-            //Container.Install(FromAssembly.Containing<ApplicationServiceInstaller>());
-            //Container.Install(FromAssembly.Containing<RepositoriesInstaller>());
+            Container.Install(FromAssembly.Containing<ApplicationServiceInstaller>());
+            Container.Install(FromAssembly.Containing<RepositoriesInstaller>());
             _resolver = new WindsorHttpDependencyResolver(Container);
 
             return _resolver;

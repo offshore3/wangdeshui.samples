@@ -56,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RepositoriesInstaller.cs" />
     <Compile Include="EntityConfigurations\ProjectEntityConfiguration.cs" />
     <Compile Include="SampleDataContext.cs" />
     <Compile Include="UnitOfWork.cs" />

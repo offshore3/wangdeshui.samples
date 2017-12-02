@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Shine.Samples.IRepositories;
+using Shine.Samples.RepositoriesImpl.EF;
 
-namespace Shine.Samples.RepositoriesImpl.EF
+namespace Shine.Samples.API.OwinHost.BootStrap.Installers
 {
     public class RepositoriesInstaller : IWindsorInstaller
     {

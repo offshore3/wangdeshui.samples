@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationServiceInstaller.cs" />
     <Compile Include="Interfaces\IProjectApplicationService.cs" />
     <Compile Include="Impl\ProjectApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

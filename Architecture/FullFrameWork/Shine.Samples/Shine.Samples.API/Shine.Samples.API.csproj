@@ -100,7 +100,9 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BootStrap\CastleHelper.cs" />
-    <Compile Include="BootStrap\WebApiControllerInstaller.cs" />
+    <Compile Include="BootStrap\Installers\ApplicationServiceInstaller.cs" />
+    <Compile Include="BootStrap\Installers\RepositoriesInstaller.cs" />
+    <Compile Include="BootStrap\Installers\WebApiControllerInstaller.cs" />
     <Compile Include="BootStrap\WindsorDependencyScope.cs" />
     <Compile Include="BootStrap\WindsorHttpDependencyResolver.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -130,6 +132,10 @@
     <ProjectReference Include="..\Shine.Samples.DTO\Shine.Samples.DTO.csproj">
       <Project>{9336CC26-4E70-48B8-9681-6CE37372BB42}</Project>
       <Name>Shine.Samples.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shine.Samples.IRepositories\Shine.Samples.IRepositories.csproj">
+      <Project>{683E0B27-6E5F-435C-B39E-47B0FB92F1BE}</Project>
+      <Name>Shine.Samples.IRepositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shine.Samples.RepositoriesImpl.EF\Shine.Samples.RepositoriesImpl.EF.csproj">
       <Project>{1F661435-729B-4247-BBEA-5BE37169498F}</Project>
