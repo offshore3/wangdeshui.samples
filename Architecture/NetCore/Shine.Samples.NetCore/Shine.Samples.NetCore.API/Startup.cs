@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Extensions;
 using Shine.Samples.NetCore.ApplicationServices.Impl;
 using Shine.Samples.NetCore.ApplicationServices.Interfaces;
+using Shine.Samples.NetCore.API.Hubs;
 using Shine.Samples.NetCore.IRepositories;
 using Shine.Samples.NetCore.IRepositories.UOW;
 
@@ -38,6 +39,7 @@ namespace Shine.Samples.NetCore.API
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddMvc();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +51,7 @@ namespace Shine.Samples.NetCore.API
             }
 
             app.UseMvc();
+            app.UseSignalR(routes => routes.MapHub<HelloHub>("hello"));
         }
     }
 }

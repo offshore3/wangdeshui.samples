@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Shine.Samples.NetCore.ApplicationServices.Interfaces;
+using Shine.Samples.NetCore.API.Hubs;
 using Shine.Samples.NetCore.DTO;
 
 
@@ -11,10 +14,12 @@ namespace Shine.Samples.NetCore.API.Controllers
     public class ProjectsController : Controller
     {
         private readonly IProjectApplicationService _projectApplicationService;
+        private readonly IHubContext<HelloHub> _helloHub;
 
-        public ProjectsController(IProjectApplicationService projectApplicationService)
+        public ProjectsController(IProjectApplicationService projectApplicationService, IHubContext<HelloHub> helloHub)
         {
             _projectApplicationService = projectApplicationService;
+            _helloHub = helloHub;
         }
 
 
@@ -27,14 +32,19 @@ namespace Shine.Samples.NetCore.API.Controllers
 
         [HttpGet("{id}")]
         // GET api/<controller>/5
-        public Project Get(Guid id)
+        public async Task<Project> Get(Guid id)
         {
+            await _helloHub.Clients.All.InvokeAsync("Hello", DateTime.UtcNow+"from server");
             return _projectApplicationService.GetProjectById(id);
         }
 
+        [HttpPost]
+
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Project project)
         {
+            project.Id = Guid.NewGuid();
+            _projectApplicationService.Add(project);
         }
 
         // PUT api/<controller>/5

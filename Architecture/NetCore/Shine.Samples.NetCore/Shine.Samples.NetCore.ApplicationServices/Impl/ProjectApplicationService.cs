@@ -19,15 +19,7 @@ namespace Shine.Samples.NetCore.ApplicationServices.Impl
             _projectRepository = projectRepository;
         }
 
-        public void AddProject(Project project)
-        {
-            Domains.Aggregates.Project domainProject =
-                new Domains.Aggregates.Project { Id = Guid.NewGuid(), Name =project.Name };
-
-            _projectRepository.Add(domainProject);
-
-            _unitOfWork.Commit();
-        }
+       
 
         public Project GetProjectById(Guid id)
         {
@@ -35,8 +27,17 @@ namespace Shine.Samples.NetCore.ApplicationServices.Impl
             var project = _projectRepository.Get(id);
 
             return new Project {Id = project.Id, Name = project.Name};
-
             
+        }
+
+        public void Add(Project project)
+        {
+            Domains.Aggregates.Project domainProject =
+                new Domains.Aggregates.Project { Id = Guid.NewGuid(), Name = project.Name };
+
+            _projectRepository.Add(domainProject);
+
+            _unitOfWork.Commit();
         }
     }
 }
