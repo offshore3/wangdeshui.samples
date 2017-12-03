@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shine.Samples.NetCore.Domains\Shine.Samples.NetCore.Domains.csproj" />
+    <ProjectReference Include="..\Shine.Samples.NetCore.DTO\Shine.Samples.NetCore.DTO.csproj" />
+    <ProjectReference Include="..\Shine.Samples.NetCore.IRepositories\Shine.Samples.NetCore.IRepositories.csproj" />
+  </ItemGroup>
+
+</Project>
